@@ -16,6 +16,8 @@ protocol.registerSchemesAsPrivileged([
 
 function createWindow() {
   // Create the browser window.
+  // メインプロセスの仕事はこのウインドウを作成する事。ウインドウはレンダラープロセスで実行される。
+  // なのでレンダラープロセスからウインドウを作る事はせず、メインプロセスに作成を依頼する。
   win = new BrowserWindow({
     width: 800,
     height: 600,
